@@ -3,10 +3,12 @@
 @(question: QuizResults, index: Int)
 
 <div id="test">
-    <h2>Question number: @(index + 1)</h2>
-    <p>q: @question.question </p>
+    <h2 >Question number: @(index + 1)</h2>
+    <p id="question">q: @question.question </p>
   <p>Please select from the answers below</p>
-    @answers(question.incorrect_answers, question.correct_answer)
+   <p id="answers">
+       @answers(question.incorrect_answers, question.correct_answer)
+   </p>
 
 </div>
 

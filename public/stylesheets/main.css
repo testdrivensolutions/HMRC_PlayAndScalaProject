@@ -1,0 +1,13 @@
+p{
+font-family: Arial, Helvetica, sans-serif;
+}
+#question {
+font-size: 25px;
+color: #3D0870;
+font-style: italic;
+}
+
+li {
+font-size: 16px;
+color: rgb(15,85,83)
+}

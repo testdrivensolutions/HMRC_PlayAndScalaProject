@@ -1,2 +1,9 @@
-@(answersCollective: Seq[String], correctAnswer: String) = {
-@(answersCollective:+ correctAnswer)}
+@(answersCollective: Seq[String], correctAnswer: String)
+<!-- TODO need to be able to mix these answers up-->
+<ul>
+    @for(answer <- answersCollective){
+    <li>@answer</li>
+    }
+    <li>@correctAnswer</li>
+</ul>
+

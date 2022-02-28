@@ -1,9 +1,13 @@
+@import components.{answers}
+
 @(question: QuizResults, index: Int)
 
 <div id="test">
     <h2>Question number: @(index + 1)</h2>
-    <p>@question.question </p>
-    <p>@question.correct_answer</p>
+    <p>q: @question.question </p>
+  <p>Please select from the answers below</p>
+    @answers(question.incorrect_answers, question.correct_answer)
+
 </div>
 
 

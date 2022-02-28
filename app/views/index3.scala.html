@@ -4,11 +4,19 @@
 
 @main("Questions"){
 
+// Keep track of question number the user is on
+// Display the question and answers of number
+// Collate and muddle up the list of answers (correct and incorrect currently seperate)
+// Keep a note of which is the correct answer
+// Allow the answers to be clickable
+// Visually show the user if they are correct or incorrect in their selection
+// Keep a note of the score of the user
 
 <h1>Questions returned as object to view</h1>
 @aResult
-@for(question <- aResult) {
-@test(question.question)
+@for(index <- 0 until aResult.size){
+
+@test(aResult(index), index)
 }
 
 @aResult

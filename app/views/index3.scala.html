@@ -1,0 +1,18 @@
+@(aResult: Seq[QuizResults])
+<h1>Questions returned as object to view</h1>
+
+@aResult
+@for(question <- aResult) {
+  </br>
+  <p>@question.category</p>
+  <p>@question.qType</p>
+  <p>@question.difficulty</p>
+  <p>@question.question</p>
+  <p>@question.correct_answer</p>
+  <p>@question.incorrect_answers</p>
+  </br>
+}
+
+@for((question, index) <- aResult.zipWithIndex) {
+<li>Question @{index+1} is @question</li>
+}

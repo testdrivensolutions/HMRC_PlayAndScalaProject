@@ -10,6 +10,17 @@
 <!--// Keep a note of the score of the user-->
 @main("Questions"){
 
+<script>
+    //doing nothing at the moment, safe to remove if no use for it
+    let jsData = '@aResult'; // where twirlData is an existing variable
+</script>
+
 @for(index <- 0 until aResult.size){
 @test(aResult(index), index)
-}}
+}
+
+<button type="button" id="next" class="btn btn-primary fixed-bottom " style="width: 130px;">Next Question</button>
+
+}
+
+

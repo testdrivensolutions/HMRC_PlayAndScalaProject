@@ -1,0 +1,12 @@
+@(quizForm: Form[QuizData])(implicit messages: Messages)
+
+@import helper._
+
+@helper.form(action = routes.FormsController.quizSetupPost){
+  @inputText(quizForm("numberOfQuestions"))
+  @inputText(quizForm("category"))
+  @inputText(quizForm("difficulty"))
+  @inputText(quizForm("qType"))
+  @inputText(quizForm("encoding"))
+  <input type="submit" value="Submit">
+}

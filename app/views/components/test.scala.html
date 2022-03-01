@@ -3,13 +3,13 @@
 @(question: QuizResults, index: Int)
 
 <div id="test">
-    <h2 >Question number: @(index + 1)</h2>
-    <p id="question">q: @question.question </p>
-  <p>Please select from the answers below</p>
-   <p id="answers">
-       @answers(question.incorrect_answers, question.correct_answer)
-   </p>
-
+    <div class="card text-white bg-dark card col-sm-10 mx-auto mb-3" style="max-width: 24rem;">
+        <div class="card-header">Question number: @(index + 1)</div>
+        <div class="card-body">
+            <h5 id="question" class="card-title">q: @question.question</h5>
+            <p id="answers" class="card-text">@answers(question.incorrect_answers, question.correct_answer)</p>
+        </div>
+    </div>
 </div>
 
 

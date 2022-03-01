@@ -13,17 +13,13 @@ class QuizController @Inject()(ws: WSClient, cc: ControllerComponents)
   extends AbstractController(cc) {
 
   def getSingleResultAsObject: Future[JsResult[QuizResult]] = ws.url("https://opentdb.com/api.php?amount=10").get().map { response =>
-    //    println(response.json)
-    //    println((response.json).validate[QuizResult])
     (response.json).validate[QuizResult]
   }
   def quiz = Action.async {
     // send the string in the body of a 200 response
     getSingleResultAsObject.map(str => {
-      println(str)
-      val test = str.get
-      println(str.get)
-      Ok(views.html.quiz(test.quizResults))
+      val result = str.get
+      Ok(views.html.quiz(result.quizResults))
     })
   }
 

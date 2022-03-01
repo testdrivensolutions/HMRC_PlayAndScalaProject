@@ -4,21 +4,7 @@
 # ~~~~
 
 # An example controller showing a sample home page
-GET     /                           controllers.HomeController.index()
-GET     /test                       controllers.HomeController.echo()
-GET     /test2                      controllers.HomeController.action()
-#http://localhost:9000/test3?name=paul
-GET     /test3                      controllers.HomeController.hello(name: String)
-
-GET     /test4                      controllers.HomeController.aRedirect()
-GET     /test5                      controllers.HomeController.redirected()
-
-GET     /ws                       controllers.WebServiceController.echo()
-GET     /singleSource             controllers.WebServiceController.singleSource()
-GET     /singleSourceAsObject     controllers.WebServiceController.singleSourceAsObject()
-
-GET     /twirl                      controllers.ViewTemplateController.index2()
-GET     /twirlExample               controllers.ViewTemplateController.index3()
+GET     /                           controllers.QuizController.quiz()
 GET     /quiz                       controllers.QuizController.quiz()
 
 # Map static resources from the /public folder to the /assets URL path

@@ -1,0 +1,26 @@
+@import components.{test}
+
+@(aResult: Seq[QuizResults])
+<!--// Keep track of question number the user is on-->
+<!--// Display the question and answers of number-->
+<!--// Collate and muddle up the list of answers (correct and incorrect currently seperate)-->
+<!--// Keep a note of which is the correct answer-->
+<!--// Allow the answers to be clickable-->
+<!--// Visually show the user if they are correct or incorrect in their selection-->
+<!--// Keep a note of the score of the user-->
+@main("Questions"){
+
+<script>
+    //doing nothing at the moment, safe to remove if no use for it
+    let jsData = '@aResult'; // where twirlData is an existing variable
+</script>
+
+@for(index <- 0 until aResult.size){
+@test(aResult(index), index)
+}
+
+<button type="button" id="next" class="btn btn-primary fixed-bottom " style="width: 130px;">Next Question</button>
+
+}
+
+

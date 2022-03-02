@@ -4,14 +4,11 @@
 # ~~~~
 
 # An example controller showing a sample home page
-GET     /                           controllers.FormsController.quizSetup()
+GET     /                           controllers.QuizController.quizSetup()
 GET     /quiz                       controllers.QuizController.quiz()
 
-GET     /test                       controllers.FormsController.index()
 +nocsrf
-POST    /test                       controllers.FormsController.userPost()
-+nocsrf
-POST    /quizSetup                  controllers.FormsController.quizSetupPost()
+POST    /quizSetup                  controllers.QuizController.quizSetupPost()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

@@ -1,6 +1,6 @@
 package controllers
 
-import models.{QuizData, UserData}
+import models.QuizData
 import play.api.libs.ws.WSClient
 import play.api.mvc.{AbstractController, AnyContent, ControllerComponents, Request}
 
@@ -21,7 +21,6 @@ class FormsController @Inject()(ws: WSClient, cc: ControllerComponents) extends 
     )(QuizData.apply)(QuizData.unapply)
   )
 
-  //remove this if you dont use it
   def quizSetup() = Action { implicit request: Request[AnyContent] =>
     Ok(views.html.quizSetup(quizSetupForm))
   }
@@ -33,23 +32,4 @@ class FormsController @Inject()(ws: WSClient, cc: ControllerComponents) extends 
     Ok(views.html.quizSetup(quizSetupForm))
   }
 
-
-  val userForm = Form(
-    mapping(
-      "name" -> text,
-      "age"  -> number
-    )(UserData.apply)(UserData.unapply)
-  )
-
-  def index = Action { implicit request =>
-    Ok(views.html.user(userForm))
-  }
-
-  val userPost = Action(parse.form(userForm)) { implicit request =>
-    println("THIS WORKED")
-    val userData = request.body
-    println(userData)
-    val newUser  = models.User(userData.name, userData.age)
-    Ok(views.html.user(userForm))
-  }
 }

@@ -1,9 +1,0 @@
-@(userForm: Form[UserData])(implicit messages: Messages)
-
-@import helper._
-
-@helper.form(action = routes.FormsController.userPost){
-  @inputText(userForm("name"))
-  @inputText(userForm("age"))
-  <input type="submit" value="Submit">
-}
